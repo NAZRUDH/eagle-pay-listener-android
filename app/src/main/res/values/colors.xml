@@ -1,0 +1,17 @@
+<resources>
+    <!-- Brand -->
+    <color name="eagle_primary">#6366F1</color>
+    <color name="eagle_primary_light">#EEF2FF</color>
+    <color name="eagle_primary_dark">#3730A3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="success">#22C55E</color>
+    <color name="error">#EF4444</color>
+    <color name="warning">#F59E0B</color>
+
+    <!-- Day (Light) mode -->
+    <color name="bg">#F8FAFC</color>
+    <color name="card">#FFFFFF</color>
+    <color name="text">#1E293B</color>
+    <color name="muted">#64748B</color>
+    <color name="bg_dark">#0B0B12</color>
+</resources>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🦅 Eagle Pay Listener"
+                    android:textColor="@color/text"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Phase 2+3: Version display -->
+                <TextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="v2.2.0"
+                    android:textColor="@color/muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Phase 3: Theme toggle -->
+            <Button
+                android:id="@+id/btnTheme"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="🌙"
+                android:textSize="18sp"
+                android:padding="0dp"
+                style="@style/Widget.Material3.Button.IconButton" />
+        </LinearLayout>
+
+        <!-- ======================= -->
+        <!-- SETUP WIZARD (Phase 3) -->
+        <!-- ======================= -->
+        <LinearLayout
+            android:id="@+id/wizardCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/card"
+            android:padding="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvWizardStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step 1 of 3"
+                android:textColor="@color/eagle_primary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Progress bar -->
+            <ProgressBar
+                android:id="@+id/wizardProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@color/eagle_primary"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tvWizardDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/muted"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/btnWizardAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next →" />
+
+        </LinearLayout>
+
+        <!-- ======================= -->
+        <!-- MAIN CONTENT (after setup) -->
+        <!-- ======================= -->
+        <LinearLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Status: Overall -->
+            <TextView
+                android:id="@+id/statusReady"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp"
+                android:background="@color/card"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Status Rows -->
+            <TextView android:id="@+id/statusPaired"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="12dp" android:background="@color/card"
+                android:textColor="@color/text" android:layout_marginBottom="6dp" />
+
+            <TextView android:id="@+id/statusAccess"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="12dp" android:background="@color/card"
+                android:textColor="@color/text" android:layout_marginBottom="6dp" />
+
+            <TextView android:id="@+id/statusBattery"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="12dp" android:background="@color/card"
+                android:textColor="@color/text" android:layout_marginBottom="6dp" />
+
+            <TextView android:id="@+id/statusWebhook"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="12dp" android:background="@color/card"
+                android:textColor="@color/muted" android:textSize="11sp"
+                android:singleLine="true" android:ellipsize="end"
+                android:layout_marginBottom="6dp" />
+
+            <TextView android:id="@+id/statusLast"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="12dp" android:background="@color/card"
+                android:textColor="@color/muted" android:layout_marginBottom="20dp" />
+
+            <!-- Action Buttons -->
+            <Button android:id="@+id/btnTestConnection"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🔌 Test Connection"
+                android:layout_marginBottom="8dp" />
+
+            <Button android:id="@+id/btnHistory"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="📋 Payment History"
+                android:layout_marginBottom="8dp" />
+
+            <Button android:id="@+id/btnUpdateWebhook"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🔗 Update Webhook URL"
+                android:layout_marginBottom="8dp" />
+
+            <Button android:id="@+id/btnCheckUpdate"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🔄 Check for Updates"
+                android:layout_marginBottom="8dp" />
+
+            <Button android:id="@+id/btnUnpair"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🔓 Unpair Device"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
